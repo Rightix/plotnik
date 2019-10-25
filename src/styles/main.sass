@@ -365,6 +365,17 @@ button
     transition: .4s
     //opacity: 0
     //display: none
+.finished
+  &__caption
+    font-size: 55px
+    line-height: 48px
+    text-align: center
+    letter-spacing: -0.02em
+    color: #000
+    position: absolute
+.dropzone__caption
+  display: inline-flex
+  position: absolute
 .structures
   &-header
     align-items: center
@@ -497,6 +508,331 @@ button
     right: 388px
     bottom: 117px
 
+.tools
+  &__title
+    width: 190px
+  &-answers
+    position: absolute
+    width: 1390px
+    left: 298px
+    bottom: 240px
+    height: 150px
+  .finished__caption
+    bottom: 280px
+    left: 710px
+  button.next-level
+    bottom: 260px
+    left: 907px
+  .answer
+    position: absolute
+    bottom: 0
+    height: 84px
+    //padding: 10px 55px
+    border: 3px dashed #cdcdcd
+    border-radius: 60px
+    text-align: center
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding-bottom: 4px
+    &.saw
+      left: 0
+      width: 176px
+    &.drill
+      left: 1183px
+      width: 207px
+    &.adze
+      left: 392px
+      width: 159px
+    &.staple
+      left: 956px
+      width: 207px
+    &.planer
+      left: 571px
+      width: 176px
+    &.axe
+      left: 762px
+      width: 183px
+    &.chisel
+      left: 196px
+      width: 176px
+  &-dropzone
+    width: 150px
+    height: 150px
+    background: rgba(0, 0, 0, 0.44)
+    border: 3px dashed #FFFFFF
+    border-radius: 50%
+    position: absolute
+    transition: .4s
+    opacity: 0
+  &-dropzone-wrapper
+    position: absolute
+    .dropzone
+      position: absolute
+    &.saw
+      top: 99px
+      left: 73px
+      .dropzone
+        top: -4px
+        right: 250px
+      .dropzone__caption
+        bottom: 12px
+        left: 220px
+    &.drill
+      top: 63px
+      left: 737px
+      .dropzone
+        top: 127px
+        left: 144px
+      .dropzone__caption
+        top: 123px
+        right: 70px
+    &.adze
+      top: 100px
+      left: 1422px
+      .dropzone
+        top: 101px
+        left: 171px
+      .dropzone__caption
+        top: 74px
+        right: 145px
+    &.staple
+      top: 345px
+      left: 193px
+      .dropzone
+        bottom: 155px
+        left: 67px
+      .dropzone__caption
+        top: 80px
+        left: 86px
+    &.planer
+      top: 433px
+      left: 571px
+      .dropzone
+        top: 47px
+        left: 65px
+      .dropzone__caption
+        right: 84px
+        bottom: -62px
+    &.axe
+      top: 300px
+      left: 994px
+      .dropzone
+        bottom: 100px
+        left: 90px
+      .dropzone__caption
+        bottom: 74px
+        left: 130px
+    &.chisel
+      top: 470px
+      left: 1304px
+      .dropzone
+        bottom: -4px
+        left: 110px
+      .dropzone__caption
+        bottom: -4px
+        right: -31px
+.assignment
+  &__title
+    width: 189px
+  button.levelControl
+    bottom: 233px
+    left: 510px
+    position: absolute
+  .finished__caption
+    bottom: 255px
+    left: 320px
+  &-dropzone
+    width: 154px
+    height: 154px
+    background: rgba(0, 0, 0, 0.44)
+    border: 3px dashed #FFFFFF
+    border-radius: 50%
+    position: absolute
+    transition: .4s
+    opacity: 0
+    &-wrapper
+      position: absolute
+      .assignment__text
+        font-size: 40px
+        line-height: 45px
+        text-align: center
+        opacity: 0
+        transition: .4s
+        position: absolute
+        color: #000
+      .dropzone
+        position: absolute
+      img
+        transition: .4s
+      .dropzone__start
+      .dropzone__finished
+        opacity: 0
+        transition: .4s
+        position: absolute
+      &.guessed
+        .dropzone__start
+          opacity: 0
+          position: absolute
+        .dropzone__finished
+          opacity: 1
+          position: relative
+        .assignment__text
+          opacity: 1
+      &.adze
+        top: 81px
+        left: 176px
+        .dropzone
+          top: 316px
+          left: 413px
+        .assignment__text
+          width: 312px
+          top: 120px
+          right: 45px
+      &.saw
+        top: 104px
+        left: 132px
+        .dropzone
+          top: 239px
+          left: 457px
+        .assignment__text
+          left: -50px
+          top: 157px
+          width: 144px
+      &.drill
+        top: 51px
+        left: 263px
+        .dropzone
+          bottom: 197px
+          left: 326px
+        .assignment__text
+          top: 316px
+          right: 169px
+      &.axe
+        top: 163px
+        left: 78px
+        .dropzone
+          bottom: 166px
+          left: 511px
+        .assignment__text
+          top: 135px
+          right: 210px
+      &.planer
+        top: 114px
+        left: 99px
+        .dropzone
+          top: 283px
+          left: 490px
+        .assignment__text
+          top: 100px
+          right: 212px
+      &.staple
+        top: 174px
+        left: 100px
+        .dropzone
+          top: 223px
+          left: 490px
+        .assignment__text
+          top: 97px
+          right: 128px
+      &.chisel
+        top: 74px
+        left: 270px
+        .dropzone
+          bottom: 185px
+          left: 320px
+        .assignment__text
+          top: 156px
+          right: -11px
+
+  .answer
+    position: absolute
+    img
+      &.common
+      &.active
+        display: none
+    .answer__name
+      display: inline-flex
+      position: absolute
+    &.saw
+      top: 12px
+      right: 40px
+      width: 635px
+      height: 183px
+      .answer__name
+        right: 88px
+        bottom: -60px
+      &.draggable-mirror
+        left: -5px!important
+        top: -70px!important
+    &.drill
+      top: 211px
+      right: 223px
+      width: 434px
+      height: 260px
+      .answer__name
+        top: 78px
+        left: 50px
+      &.draggable-mirror
+        left: 0px!important
+        top: -200px!important
+    &.axe
+      top: 331px
+      right: 69px
+      width: 347px
+      height: 249px
+      z-index: 10
+      .answer__name
+        top: 94px
+        right: 42px
+      &.draggable-mirror
+        left: -3px!important
+        top: -110px!important
+    &.adze
+      top: 475px
+      right: 268px
+      width: 373px
+      height: 366px
+      .answer__name
+        top: 130px
+        left: 46px
+      &.draggable-mirror
+        left: 5px!important
+        top: -70px!important
+    &.planer
+      top: 531px
+      right: 38px
+      width: 236px
+      height: 159px
+      .answer__name
+        bottom: -52px
+        left: 0
+        right: 0
+        margin: auto
+    &.chisel
+      top: 764px
+      right: 53px
+      width: 267px
+      height: 144px
+      z-index: 10
+      .answer__name
+        bottom: -34px
+        right: 68px
+      &.draggable-mirror
+        left: -0px!important
+        top: -90px!important
+    &.staple
+      top: 787px
+      right: 350px
+      width: 225px
+      height: 235px
+      z-index: 10
+      .answer__name
+        bottom: -38px
+        right: 60px
+      &.draggable-mirror
+        left: -13px!important
+        top: -55px!important
 .fade-enter-active, .fade-leave-active
   transition: opacity .4s
 
@@ -643,7 +979,16 @@ button
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3)
   background: #fff
   z-index: 100
-
+.assignment .answer.draggable-mirror
+  border: none!important
+  box-shadow: none !important
+  background: none !important
+  .answer__name
+    opacity: 0
+  img.common
+    display: none
+  img.active
+    display: block
 .dragArea
   &.isDraggable
 .draggable-source--is-dragging
@@ -655,9 +1000,8 @@ button
       opacity: 0
       visibility: hidden
       display: none
+
   .draggable-dropzone--occupied.draggable-container--over
-    .queryMark
-      opacity: 1
     .isDraggable
       opacity: 0
 .draggable
@@ -673,6 +1017,4 @@ button
     &--occupied
 
       opacity: 1
-      .queryMark
-        opacity: 0
 

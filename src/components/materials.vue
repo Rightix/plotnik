@@ -211,60 +211,6 @@
             onLevelFinished(result) {
                 this.levelFinished = result;
             },
-
-            /*getAnswer(name) {
-                const [answerResult] = this.answers.filter((item) => {
-                    if (item.name === name) {
-                        return item;
-                    }
-                });
-                // console.log(answerResult)
-                return answerResult;
-
-            },
-            calculatePoints() {
-                return this.answers.reduce(function (acc, item) {
-                    if (item.hasPoint === true) {
-                        return acc + 1;
-                    } else {
-                        return acc;
-                    }
-                }, 0);
-            },
-            lowerPoint(answerName) {
-                this.getAnswer(answerName).hasPoint = false;
-            },
-            showGuessed(className, droppedClassName) {
-                const explainWrapper = document.querySelector('.explain-wrapper');
-                if (!droppedClassName.contains(className)) {
-                    // console.log(explainWrapper.querySelector(`.equally.${className}`))
-                    explainWrapper.querySelector(`.equally.${className}`).classList.add('guessed');
-                } else {
-                    explainWrapper.querySelector(`.${className}`).classList.add('guessed');
-                }
-            },
-            computeCompareName: function (name) {
-                switch (name) {
-                    case 'birch':
-                        return true;
-                    case 'spruce':
-                        return true;
-                }
-            },
-            compareDragNames(name1, name2) {
-                if (name1 === name2) {
-                    return true;
-                } else {
-                    return false;
-                }
-            },
-            compareEqually(equally1, equally2) {
-                if (equally1 && equally2) {
-                    return equally1 === equally2;
-                } else {
-                    return null;
-                }
-            }*/
             computeCompareName: function (name) {
                 switch (name) {
                     case 'birch':

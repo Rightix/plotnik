@@ -1,20 +1,20 @@
 <template>
-  <div class="wrapper structures">
-    <div class="level-header structures-header">
-      <div class="level__counter">2.</div>
-      <div class="level__title structures__title">
-        Виды деревянных строений
+  <div class="wrapper tools">
+    <div class="level-header tools-header">
+      <div class="level__counter">3.</div>
+      <div class="level__title tools__title">
+        НАЗВАНИЯ ИНСТРУМЕНТОВ
       </div>
     </div>
-    <div class="structures-area dropArea">
+    <div class="tools-area dropArea">
       <div v-for="(task, index) in tasks"
            :key="index"
            :class="task"
-           class="structures-dropzone-wrapper">
-        <div class="structures-dropzone__img">
-          <img :src="require('@/img/' + `structures_${index}.png`)" alt="">
+           class="tools-dropzone-wrapper">
+        <div class="tools-dropzone__img">
+          <img :src="require('@/img/' + `tools_${index}.png`)" alt="">
         </div>
-        <div class="structures-dropzone dropzone"
+        <div class="tools-dropzone dropzone"
              :data-compare="task"
         >
           <div class="queryMark">
@@ -24,7 +24,7 @@
         <div key="enter" class="dropzone__caption"></div>
       </div>
     </div>
-    <div class="structures-answers dropzone draggable-dropzone--occupied dragArea">
+    <div class="tools-answers dropzone draggable-dropzone--occupied dragArea">
       <div v-for="answer in answers"
            :key="answer.name"
            :class="[answer.name]"
@@ -40,19 +40,23 @@
     </div>
     <div class="task-block">
       <div class="task-block__title">
-        Сопоставьте название строения и его рисунок
+        Сопоставьте название инструмента и его изображение
       </div>
       <div class="task-block__caption">
-        Перетащите мышью кнопку на соответствующую картинку здания
+        Перетащите мышью каждое из названий на картинку соответствующего инструмента
       </div>
     </div>
     <transition name="fade"
                 :duration="400">
-      <button v-if="levelFinished"
-              @click="$emit('next-level', 'tools')"
-              class="levelControl next-level">
-        продолжить
-      </button>
+      <div class="finished-wrapper"
+           v-if="levelFinished">
+        <div class="finished__caption">Отлично!</div>
+        <button @click="$emit('next-level', 'structures')"
+                class="levelControl next-level">
+          продолжить
+        </button>
+      </div>
+
     </transition>
     <footer class="footer">
       <div class="footer__logo">
@@ -85,23 +89,20 @@
             return {
                 levelPoints: 0,
                 levelFinished: false,
-                tasks: ['house', 'mill', 'church', 'barn', 'bathhouse', 'well', 'forge', 'riga'],
+                tasks: ['saw', 'drill', 'adze', 'staple', 'planer', 'axe', 'chisel'],
                 answers: [
-                    {name: 'bathhouse', caption: 'Баня', hasPoint: true},
-                    {name: 'house', caption: 'Дом', hasPoint: true},
-                    {name: 'riga', caption: 'Рига', hasPoint: true},
-                    {name: 'barn', caption: 'Амбар', hasPoint: true},
-                    {name: 'well', caption: 'Колодец', hasPoint: true},
-                    {name: 'forge', caption: 'Кузница', hasPoint: true},
-                    {name: 'mill', caption: 'Мельница', hasPoint: true},
-                    {name: 'church', caption: 'Церковь', hasPoint: true},
+                    {name: 'saw', caption: 'Пила', hasPoint: true},
+                    {name: 'drill', caption: 'Сверло', hasPoint: true},
+                    {name: 'adze', caption: 'Тесло', hasPoint: true},
+                    {name: 'staple', caption: 'Скобель', hasPoint: true},
+                    {name: 'planer', caption: 'Рубанок', hasPoint: true},
+                    {name: 'axe', caption: 'Топор', hasPoint: true},
+                    {name: 'chisel', caption: 'Долото', hasPoint: true},
                 ],
             };
         },
         methods: {
-            level(event) {
-                console.log(event)
-            }
+
         },
     };
 </script>

@@ -18,12 +18,14 @@
     import rules from './components/rules.vue';
     import materials from './components/materials.vue';
     import structures from './components/structures.vue';
+    import tools from './components/tools.vue';
+    import assignment from './components/assignment.vue';
 
     export default {
         data() {
             return {
-                currentLevel: 'materials',
-                levels: ['intro', 'rules', 'materials', 'structures'],
+                currentLevel: 'assignment',
+                levels: ['intro', 'rules', 'materials', 'structures', 'tools', 'assignment'],
                 totalPoints: 0,
             };
         },
@@ -49,7 +51,7 @@
             },
         },
         components: {
-            intro, rules, materials, structures,
+            intro, rules, materials, structures, tools, assignment,
         },
         mounted() {
             /*document.querySelectorAll('img').addEventListener('dragstart', (event) => {

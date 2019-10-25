@@ -52,26 +52,9 @@
             showGuessed(className, droppedClassName) {
                 const explainWrapper = document.querySelector('.explain-wrapper');
                 if (!droppedClassName.contains(className)) {
-                    // console.log(explainWrapper.querySelector(`.equally.${className}`))
                     explainWrapper.querySelector(`.equally.${className}`).classList.add('guessed');
                 } else {
                     explainWrapper.querySelector(`.${className}`).classList.add('guessed');
-                }
-            },
-            computeCompareName(name) {
-                switch (name) {
-                    case 'birch':
-                        return true;
-                    case 'spruce':
-                        return true;
-                }
-                return false;
-            },
-            compareDragNames(name1, name2) {
-                if (name1 === name2) {
-                    return true;
-                } else {
-                    return false;
                 }
             },
             compareEqually(equally1, equally2) {
@@ -85,6 +68,10 @@
                 const element = dropzoneContainer.querySelector('.dropzone__caption');
                 const { caption } = this.getAnswer(answerName);
                 element.innerHTML = caption;
+            },
+            showAssignment(dragName, dropzoneContainer) {
+                dropzoneContainer.closest(`.${dragName}`).classList.add('guessed');
+                this.$emit('assignment-guessed');
             },
         },
         watch: {
@@ -135,6 +122,7 @@
             let dragState = 'reject';
 
             droppable.on('drag:start', (evt) => {
+                console.log(evt)
                 dragPosition = null;
                 dragState = null;
                 currentSourceItem = evt.originalSource;
@@ -159,7 +147,7 @@
                 droppedCompareName = evt.dropzone.dataset.compare;
                 equally1 = evt.dropzone.dataset.equally;
                 equally2 = currentSourceItem.dataset.equally;
-                const compareResult = this.compareDragNames(draggedCompareName, droppedCompareName)
+                const compareResult = draggedCompareName === droppedCompareName;
                 const equallyResult = this.compareEqually(equally1, equally2);
                 if ((!compareResult) && !equallyResult) {
                     dragState = 'reject';
@@ -180,14 +168,17 @@
                         case 'explain':
                             this.showGuessed(draggedCompareName, dropzoneClasses);
                             break;
+                        case 'assignment':
+                            this.showAssignment(draggedCompareName, dropzoneContainer);
+                            break;
                         default:
                             this.insertAnswerName(dropzoneContainer);
                     }
                 };
-                // Add class only for dropzone 'container'
                 if (dragPosition === 'inside' && dragState === 'reject') {
                     this.lowerPoint(draggedCompareName);
                 }
+                // Add class only for dropzone 'container'
                 if (dropzoneContainer.closest('.dropArea')) {
                     dragState = 'finished';
                     resolveDragActions();
