@@ -51,7 +51,7 @@
       <div class="finished-wrapper"
            v-if="levelFinished">
         <div class="finished__caption">Отлично!</div>
-        <button @click="$emit('next-level', 'structures')"
+        <button @click="$emit('next-level', 'assignment')"
                 class="levelControl next-level">
           продолжить
         </button>

@@ -147,11 +147,14 @@
     </div>
     <transition name="fade"
                 :duration="400">
-      <button v-if="levelFinished"
-              @click="$emit('next-level', 'structures', levelPoints)"
-              class="levelControl next-level">
-        продолжить
-      </button>
+      <div class="finished-wrapper"
+           v-if="levelFinished">
+        <div class="finished__caption">Отлично!</div>
+        <button @click="$emit('next-level', 'structures')"
+                class="levelControl next-level">
+          продолжить
+        </button>
+      </div>
     </transition>
     <footer class="footer">
       <div class="footer__logo">

@@ -3,6 +3,8 @@
   src: url('../assets/Engine-Regular.woff2') format('woff2'), url('../assets/Engine-Regular.woff') format('woff')
   font-weight: normal
   font-style: normal
+html
+  height: 100%
 body
   cursor: url("../svg/cursor_1.svg"), auto !important
   &.draggable--is-dragging
@@ -12,9 +14,10 @@ body
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
+  height: 100%
 #app
   color: #fdaaaa
-  height: 1080px
+  height: 100%
   //height: 100vh
   font-family: 'Engine', sans-serif
   overflow: hidden
@@ -133,7 +136,7 @@ button
 .level__counter
   font-family: 'Engine'
   font-size: 50px
-  line-height: 60px
+  line-height: 48px
   color: #ce7c00
   margin-right: 13px
 .rules
@@ -365,6 +368,10 @@ button
     transition: .4s
     //opacity: 0
     //display: none
+  .finished__caption
+    position: absolute
+    top: 372px
+    right: 316px
 .finished
   &__caption
     font-size: 55px
@@ -507,7 +514,10 @@ button
   button.levelControl
     right: 388px
     bottom: 117px
-
+  .finished__caption
+    position: absolute
+    right: 484px
+    bottom: 238px
 .tools
   &__title
     width: 190px
@@ -744,7 +754,6 @@ button
         .assignment__text
           top: 156px
           right: -11px
-
   .answer
     position: absolute
     img
@@ -833,6 +842,449 @@ button
       &.draggable-mirror
         left: -13px!important
         top: -55px!important
+.detail
+  &-header
+    align-items: center
+  &-task
+    width: 1440px
+    height: 580px
+    position: absolute
+    top: 179px
+    left: 236px
+    background: url("../img/detail.png")
+  &__drop
+    width: 104px
+    height: 104px
+    position: absolute
+    background: rgba(0, 0, 0, 0.44)
+    border: 3px dashed #FFFFFF
+    border-radius: 50%
+    transition: .4s
+    opacity: 0
+    &.platband
+      left: 838px
+      top: 229px
+    &.stream
+      top: 247px
+      right: 23px
+    &.shelom
+      left: 416px
+      top: -19px
+    &.prichelina
+      top: 117px
+      left: 119px
+    &.towel
+      top: 84px
+      left: 254px
+    &.baluster
+      left: 60px
+      bottom: 176px
+    &.magpie
+      left: 305px
+      top: -30px
+    &.bull
+      right: 67px
+      bottom: 81px
+  &-answers
+    position: absolute
+    width: 1555px
+    height: 90px
+    left: 238px
+    bottom: 232px
+  .answer
+    border: 3px dashed #AAA099
+    border-radius: 60px
+    height: 84px
+    position: absolute
+    display: inline-flex
+    bottom: 0
+    align-items: center
+    justify-content: center
+    padding-bottom: 4px
+    &.platband
+      left: 0px
+      width: 194px
+    &.stream
+      left: 211px
+      width: 151px
+    &.shelom
+      left: 379px
+      width: 157px
+    &.prichelina
+      left: 553px
+      width: 213px
+    &.towel
+      left: 783px
+      width: 212px
+    &.baluster
+      left: 1012px
+      width: 217px
+    &.magpie
+      left: 1246px
+      width: 167px
+    &.bull
+      left: 1429px
+      width: 126px
+  &-explain
+    position: absolute
+    &-area
+      //width: 1824px
+      //height: 611px
+      //position: absolute
+      //top: 42px
+      //left: 58px
+    &.platband
+      width: 448px
+      right: -194px
+      top: -136px
+      .explain-line
+        left: -300px
+        top: 38px
+    &.stream
+      right: -206px
+      width: 162px
+      top: 69px
+      .explain-line
+        left: -110px
+        top: 38px
+    &.shelom
+      right: 415px
+      top: -136px
+      width: 263px
+      .explain-line
+        left: -296px
+        top: 38px
+    &.prichelina
+      left: -178px
+      width: 214px
+      top: -35px
+      .explain-line
+        left: 128px
+        top: 38px
+    &.towel
+      left: 68px
+      width: 140px
+      top: -136px
+      .explain-line
+        left: 128px
+        top: 38px
+    &.baluster
+      width: 214px
+      left: -178px
+      bottom: 144px
+      .explain-line
+        left: 114px
+        top: 38px
+    &.magpie
+      left: 424px
+      top: -137px
+      width: 132px
+      .explain-line
+        left: -69px
+        top: 38px
+    &.bull
+      right: -206px
+      width: 162px
+      bottom: 105px
+      .explain-line
+        left: -162px
+        top: 38px
+  button.levelControl
+    bottom: 70px
+    right: 385px
+  .finished__caption
+    bottom: 216px
+    right: 484px
+.elements
+  &-header
+    width: 195px
+  &-task
+    width: 594px
+    height: 931px
+    background: url("../img/elements.png")
+    position: absolute
+    top: 20px
+    left: 362px
+  &__drop
+    width: 104px
+    height: 104px
+    position: absolute
+    background: rgba(0, 0, 0, 0.44)
+    border: 3px dashed #FFFFFF
+    border-radius: 50%
+    transition: .4s
+    opacity: 0
+    &.octa
+      left: 183px
+      bottom: 306px
+    &.quadr
+      left: 180px
+      bottom: 95px
+    &.marquee
+      top: 294px
+      right: 236px
+    &.barrel
+      bottom: 256px
+      right: 61px
+    &.glaucus
+      top: 72px
+      right: 233px
+    &.felling
+      right: 162px
+      bottom: 394px
+  .answer
+    width: 203px
+    height: 203px
+    border: 3px solid #CDCDCD
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    border-radius: 50%
+    &.octa
+      top: 129px
+      right: 147px
+    &.quadr
+      top: 155px
+      right: 383px
+    &.marquee
+      top: 383px
+      right: 413px
+    &.barrel
+      top: 354px
+      right: 175px
+    &.glaucus
+      top: 604px
+      right: 311px
+    &.felling
+      top: 571px
+      right: 78px
+  &-explain
+    position: absolute
+    .explain-line
+      top: 40px
+    &.octa
+      width: 243px
+      left: -218px
+      top: 216px
+      .explain-line
+        left: 133px
+    &.quadr
+      width: 243px
+      left: -218px
+      bottom: 367px
+      .explain-line
+        left: 115px
+    &.marquee
+      width: 217px
+      top: 23px
+      right: -160px
+      .explain-line
+        left: -167px
+    &.barrel
+      right: -242px
+      width: 202px
+      top: 504px
+      .explain-line
+        left: -130px
+    &.glaucus
+      width: 208px
+      top: 10px
+      left: -20px
+      .explain-line
+        left: 94px
+    &.felling
+      width: 327px
+      right: -270px
+      top: 245px
+      .explain-line
+        left: -110px
+  .finished__caption
+    position: absolute
+    top: 392px
+    right: 278px
+  .next-level
+    top: 585px
+    right: 179px
+.node
+  &-dropzone
+    width: 104px
+    height: 104px
+    background: rgba(0, 0, 0, 0.44)
+    border: 3px dashed #FFFFFF
+    border-radius: 50%
+    position: absolute
+    transition: .4s
+    opacity: 0
+    &-wrapper
+      position: absolute
+      .dropzone__caption
+        position: absolute
+      &.arbor
+        top: 72px
+        left: 135px
+        .dropzone
+          top: 86px
+          left: 80px
+        .dropzone__caption
+          right: -45px
+          top: 126px
+      &.hook
+        top: 52px
+        left: 525px
+        .dropzone
+          top: 106px
+          left: 90px
+        .dropzone__caption
+          right: -50px
+          top: 146px
+      &.kurdyuk
+        top: 52px
+        left: 976px
+        .dropzone
+          top: 106px
+          left: 83px
+        .dropzone__caption
+          right: -81px
+          top: 146px
+      &.paw
+        left: 1437px
+        top: 52px
+        .dropzone
+          top: 106px
+          left: 96px
+        .dropzone__caption
+          right: -78px
+          top: 146px
+      &.pan
+        top: 425px
+        left: 94px
+        .dropzone
+          top: 131px
+          left: 88px
+        .dropzone__caption
+          right: -132px
+          top: 124px
+      &.ohryap
+        top: 403px
+        left: 553px
+        .dropzone
+          top: 153px
+          left: 103px
+        .dropzone__caption
+          right: -63px
+          top: 146px
+      &.ohlop
+        top: 403px
+        left: 1004px
+        .dropzone
+          top: 153px
+          left: 83px
+        .dropzone__caption
+          right: -53px
+          top: 146px
+      &.tooth
+        top: 403px
+        left: 1437px
+        .dropzone
+          top: 153px
+          left: 96px
+        .dropzone__caption
+          right: -168px
+          width: 147px
+          top: 146px
+  &-answers
+    width: 1611px
+    height: 84px
+    position: absolute
+    bottom: 221px
+    left: 208px
+  .answer
+    position: absolute
+    bottom: 0
+    height: 84px
+    //padding: 10px 55px
+    border: 3px dashed #cdcdcd
+    border-radius: 60px
+    text-align: center
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding-bottom: 4px
+    &.arbor
+      width: 142px
+      left: 0
+    &.hook
+      left: 156px
+      width: 151px
+    &.kurdyuk
+      left: 326px
+      width: 180px
+    &.paw
+      left: 789px
+      width: 155px
+    &.pan
+      left: 525px
+      width: 246px
+    &.ohryap
+      left: 960px
+      width: 156px
+    &.ohlop
+      left: 1444px
+      width: 167px
+    &.tooth
+      left: 1132px
+      width: 294px
+  .finished__caption
+    right: 382px
+    bottom: 240px
+    position: absolute
+  button.levelControl
+    right: 283px
+    bottom: 111px
+.finish
+  &-inner
+    width: 1040px
+    top: 266px
+    left: 252px
+    position: absolute
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+  &-axes
+    margin-bottom: 84px
+    display: flex
+  &-master
+    width: 220px
+    height: 534px
+    position: absolute
+    right: 152px
+    top: 234px
+    background: url("../img/master.png") no-repeat
+    background-size: cover
+  &-text
+    text-align: center
+    font-size: 48px
+    line-height: 53px
+    letter-spacing: -0.04em
+    color: #766457
+    span
+      color: #000
+      text-transform: uppercase
+  &-reboot
+    font-size: 40px
+    line-height: 48px
+    text-align: center
+    letter-spacing: -0.02em
+    color: #937865
+    width: 306px
+    height: 68px
+    border: 3px dashed #937865
+    border-radius: 60px
+    position: absolute
+    top: 840px
+    left: 622px
 .fade-enter-active, .fade-leave-active
   transition: opacity .4s
 
@@ -960,25 +1412,23 @@ button
       margin-right: 32px
       width: 228px
 .answer
+  transition: .4s border-color, box-shadow
   &__name
     font-size: 40px
     line-height: 48px
     color: #000
     font-family: 'Engine'
-
+  &.draggable-mirror
+    border: 3px solid #CDCDCD
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3)
+    background: #fff
+    z-index: 100
+    cursor: url("../svg/cursor_2.svg"), auto !important
 .drag
   box-shadow: 0px 5px 7px 2px rgba(0, 0, 0, 0.41)
   border: none
   background: #fff
 
-.answer
-  transition: .4s border-color, box-shadow
-
-.answer.draggable-mirror
-  border: 3px solid #CDCDCD
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3)
-  background: #fff
-  z-index: 100
 .assignment .answer.draggable-mirror
   border: none!important
   box-shadow: none !important

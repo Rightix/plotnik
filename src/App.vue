@@ -1,13 +1,15 @@
 <template>
   <div id="app">
+    <transition name="fade" :duration="400">
     <component
       @next-level="toNextLevel"
       @calculate-points="calculateTotalPoints"
+      @restart="restartGame"
       :is="currentTabComponent"
-      :method="parentMethod"
-      :level="currentLevel">
+      :level="currentLevel"
+      :totalPoints="totalPoints">
     </component>
-
+    </transition>
   </div>
 </template>
 
@@ -20,12 +22,27 @@
     import structures from './components/structures.vue';
     import tools from './components/tools.vue';
     import assignment from './components/assignment.vue';
+    import detail from './components/detail.vue';
+    import elements from './components/elements.vue';
+    import node from './components/node.vue';
+    import finish from './components/finish.vue';
 
     export default {
         data() {
             return {
-                currentLevel: 'assignment',
-                levels: ['intro', 'rules', 'materials', 'structures', 'tools', 'assignment'],
+                currentLevel: 'finish',
+                levels: [
+                    'intro',
+                    'rules',
+                    'materials',
+                    'structures',
+                    'tools',
+                    'assignment',
+                    'detail',
+                    'elements',
+                    'node',
+                    'finish',
+                ],
                 totalPoints: 0,
             };
         },
@@ -33,30 +50,30 @@
             toNextLevel(levelName) {
                 this.currentLevel = levelName;
             },
+            restartGame() {
+                this.currentLevel = 'intro';
+                this.totalPoints = 0;
+            },
             calculateTotalPoints(points) {
                 if (points) {
                     this.totalPoints += points;
                     console.log('Total: ' + this.totalPoints);
                 }
             },
-            parentMethod() {
-                this.currentLevel = 'materials';
-                console.log(this.currentLevel);
-            },
         },
         computed: {
             currentTabComponent() {
-                // console.log(this.currentLevel);
                 return this.currentLevel.toLowerCase();
             },
         },
         components: {
-            intro, rules, materials, structures, tools, assignment,
+            intro, rules, materials, structures, tools, assignment, detail, elements, node, finish,
         },
         mounted() {
-            /*document.querySelectorAll('img').addEventListener('dragstart', (event) => {
-               event.preventDefault();
-            });*/
+            let elements = document.getElementsByTagName('img');
+            Array.from(elements).forEach((item) => {
+                item.draggable = false;
+            });
         },
     };
 </script>

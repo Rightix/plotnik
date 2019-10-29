@@ -34,7 +34,6 @@
                         return item;
                     }
                 });
-                // console.log(answerResult)
                 return answerResult;
             },
             calculatePoints() {
@@ -76,7 +75,6 @@
         },
         watch: {
             answersLeft() {
-                console.log(this.answersLeft);
                 if (this.answersLeft === 0) {
                     this.levelFinished = true;
                     this.levelPoints = this.calculatePoints();
@@ -85,16 +83,10 @@
                 return false;
             },
             levelPoints() {
-                console.log(this.levelPoints)
                 this.$emit('calculate-points', this.levelPoints);
             },
         },
-        computed: {},
-        updated() {
-        },
         mounted() {
-            console.log('START');
-            console.log(this.levelPoints);
             const containers = document.querySelectorAll('.dropzone');
             if (containers.length === 0) {
                 return false;
@@ -122,7 +114,6 @@
             let dragState = 'reject';
 
             droppable.on('drag:start', (evt) => {
-                console.log(evt)
                 dragPosition = null;
                 dragState = null;
                 currentSourceItem = evt.originalSource;

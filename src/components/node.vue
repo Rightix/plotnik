@@ -1,30 +1,27 @@
 <template>
-  <div class="wrapper structures">
-    <div class="level-header structures-header">
-      <div class="level__counter">2.</div>
-      <div class="level__title structures__title">
-        Виды деревянных строений
+  <div class="wrapper node">
+    <div class="level-header node-header">
+      <div class="level__counter">7.</div>
+      <div class="level__title node__title">
+        Узлы
       </div>
     </div>
-    <div class="structures-area dropArea">
+    <div class="node-area dropArea">
       <div v-for="(task, index) in tasks"
            :key="index"
            :class="task"
-           class="structures-dropzone-wrapper">
-        <div class="structures-dropzone__img">
-          <img :src="require('@/img/' + `structures_${index}.png`)" alt="">
+           class="node-dropzone-wrapper">
+        <div class="node-dropzone__img">
+          <img :src="require('@/img/' + `node_${index}.png`)" alt="">
         </div>
-        <div class="structures-dropzone dropzone"
-             :data-compare="task"
-        >
-          <div class="queryMark">
-            ?
-          </div>
+        <div class="node-dropzone dropzone"
+             :data-compare="task">
+          <div class="queryMark">?</div>
         </div>
         <div key="enter" class="dropzone__caption"></div>
       </div>
     </div>
-    <div class="structures-answers dropzone draggable-dropzone--occupied dragArea">
+    <div class="node-answers dropzone draggable-dropzone--occupied dragArea">
       <div v-for="answer in answers"
            :key="answer.name"
            :class="[answer.name]"
@@ -40,10 +37,10 @@
     </div>
     <div class="task-block">
       <div class="task-block__title">
-        Сопоставьте название строения и его рисунок
+        Сопоставьте названия бревенчатых узлов и их изображения
       </div>
       <div class="task-block__caption">
-        Перетащите мышью кнопку на соответствующую картинку здания
+        Перетащите мышью кнопки элементов в соответствующие слоты на картинках
       </div>
     </div>
     <transition name="fade"
@@ -51,7 +48,7 @@
       <div class="finished-wrapper"
            v-if="levelFinished">
         <div class="finished__caption">Отлично!</div>
-        <button @click="$emit('next-level', 'tools')"
+        <button @click="$emit('next-level', 'finish')"
                 class="levelControl next-level">
           продолжить
         </button>
@@ -88,16 +85,16 @@
             return {
                 levelPoints: 0,
                 levelFinished: false,
-                tasks: ['house', 'mill', 'church', 'barn', 'bathhouse', 'well', 'forge', 'riga'],
+                tasks: ['arbor', 'hook', 'kurdyuk', 'paw', 'pan', 'ohryap', 'ohlop', 'tooth'],
                 answers: [
-                    {name: 'bathhouse', caption: 'Баня', hasPoint: true},
-                    {name: 'house', caption: 'Дом', hasPoint: true},
-                    {name: 'riga', caption: 'Рига', hasPoint: true},
-                    {name: 'barn', caption: 'Амбар', hasPoint: true},
-                    {name: 'well', caption: 'Колодец', hasPoint: true},
-                    {name: 'forge', caption: 'Кузница', hasPoint: true},
-                    {name: 'mill', caption: 'Мельница', hasPoint: true},
-                    {name: 'church', caption: 'Церковь', hasPoint: true},
+                    {name: 'arbor', caption: 'Обло', hasPoint: true},
+                    {name: 'hook', caption: 'Крюк', hasPoint: true},
+                    {name: 'kurdyuk', caption: 'Курдюк', hasPoint: true},
+                    {name: 'paw', caption: 'Лапа', hasPoint: true},
+                    {name: 'pan', caption: 'Сковородень', hasPoint: true},
+                    {name: 'ohryap', caption: 'Охряп', hasPoint: true},
+                    {name: 'ohlop', caption: 'Охлоп', hasPoint: true},
+                    {name: 'tooth', caption: 'Голландский зуб', hasPoint: true},
                 ],
             };
         },
