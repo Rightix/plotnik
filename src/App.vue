@@ -30,7 +30,7 @@
     export default {
         data() {
             return {
-                currentLevel: 'finish',
+                currentLevel: 'intro',
                 levels: [
                     'intro',
                     'rules',
