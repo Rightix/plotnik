@@ -209,7 +209,6 @@
                 ],
             };
         },
-
         methods: {
             onLevelFinished(result) {
                 this.levelFinished = result;
@@ -223,106 +222,8 @@
                 }
             },
         },
-        watch: {},
-        computed: {},
-        updated() {
-        },
-        /*mounted() {
-            const containers = document.querySelectorAll('.dropzone');
-            const maindropArea = document.querySelector('.materials-answers');
-            const containerCapacity = 5;
-            const classes = {
-                draggable: 'StackedListItem--isDraggable',
-                capacity: 'draggable-dropzone--occupied',
-            };
-            if (containers.length === 0) {
-                return false;
-            }
-
-            const droppable = new Droppable(containers, {
-                draggable: '.isDraggable',
-                dropzone: '.dropzone',
-                mirror: {
-                    constrainDimensions: true,
-                    cursorOffsetX: -12,
-                    cursorOffsetY: 114
-                },
-            });
-            let currentSourceItem;
-            let currentSourceContainer;
-            let dropzoneContainer
-            let draggedCompareName;
-            let droppedCompareName;
-            let compareEqually;
-            let equally1;
-            let equally2;
-
-            // ['outside', 'inside']
-            let dragState = null;
-            // ['resolve', 'reject']
-            let dragResult = 'reject';
-
-
-            droppable.on('drag:start', (evt) => {
-                dragState = null;
-                dragResult = null;
-                currentSourceItem = evt.originalSource;
-                currentSourceContainer = evt.sourceContainer;
-                draggedCompareName = currentSourceItem.dataset.compare;
-                /!*if (currentSourceContainer.closest('.dropArea')) {
-                    evt.cancel();
-                }*!/
-            });
-            droppable.on('drag:over', (evt) => {
-                let overContainerClasses = evt.overContainer.classList;
-                if (!overContainerClasses.contains('dragArea')) {
-                    dragState = 'inside';
-                }
-            });
-            droppable.on('drag:out', (evt) => {
-                dragState = 'outside';
-            });
-            droppable.on('drag:out:container', (evt) => {
-                dragState = 'outside'
-            })
-            droppable.on('droppable:dropped', (evt) => {
-                dragState = 'inside';
-                dragResult = 'resolve';
-                droppedCompareName = evt.dropzone.dataset.compare;
-                equally1 = evt.dropzone.dataset.equally;
-                equally2 = currentSourceItem.dataset.equally;
-                let compareResult = this.compareDragNames(draggedCompareName, droppedCompareName)
-                let equallyResult = this.compareEqually(equally1, equally2);
-                if ((!compareResult) && !equallyResult) {
-                    dragResult = 'reject';
-                    evt.cancel();
-                }
-
-            });
-            droppable.on('droppable:stop', (evt) => {
-                droppedCompareName = evt.dropzone.dataset.compare;
-                dropzoneContainer = evt.dropzone.parentNode;
-                let dropzoneClasses = evt.dropzone.classList;
-                // Add class only for dropzone 'container'
-                if (dragState === 'inside' && dragResult === 'reject') {
-                    this.lowerPoint(draggedCompareName);
-                }
-                if (dropzoneContainer.classList.contains('dropArea')) {
-                    dropzoneClasses.toggle('afterDrop', true);
-                    this.showGuessed(draggedCompareName, dropzoneClasses);
-                    this.answersLeft -= 1;
-                }
-            })
-
-        },*/
     };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 </style>
-
-
-При сборке не обошлось без сложностей. Болты не качественные, и быстро срывается резьба. Но если не торопиться и закручивать болты по диагонали с обоих сторон,
-или собирать его в двоем, то будет легче. Газлифт не самый качественный, через полгода начинает поскрипывать,
-но в целом за свою цену работает отлично, главное вовремя смазывать.
-Механизм покачивания отличный. Колесики спустя почти год отлично ездят, не застревают. Подлокотники хоть и кажутся большими, но на деле отлично подходят под стандартный стол.

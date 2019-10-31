@@ -46,28 +46,6 @@
             level: String,
             method: {type: Function},
         },
-        data() {
-            return {
-                test: 'test'
-            }
-        },
-        methods: {},
-        mounted() {
-            // Use the parent function directly here
-            // this.method();
-        },
-        // data: function () {
-        //   return {
-        //     counter: 0,
-        //   }
-        // },
-
-        // data: function () {
-        //   return {
-        //     message: 'Test string',
-        //   };
-        // },
-
     };
 </script>
 
